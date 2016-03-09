@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cricket">
+	<head>
+		<title>Pakistan V England</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script src="jQuery/jquery-min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="./js/app.js"></script>
+		<script src="./js/cricketController.js"></script>
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	</head>
+	<body ng-controller="cricketController as cricket">
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<div class="col-sm-2"><div class="test">Im showing after 800</div>
+
+				</div>
+				
+				<div class="col-sm-2">
+					<div id="latestVideos">
+
+					</div>
+					<div id="tweetFeed">
+						<a class="twitter-timeline" href="https://twitter.com/ECB_cricket" data-widget-id="707569155835297792"></a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>	
+				</div>
+				<div id="mainScoreArea" class="col-sm-8">
+					<div ng-style="statShare" id="statShare">	
+						<img class="smallimage" src="images/cook.jpg">
+						<span class="tweetTitle">A Cook <br> 10,000th run</span>
+						<span class="tweetDescription">A Cook scores his 10000th run for England</span>
+						<a class="tweetButton" href="https://twitter.com/intent/tweet?text=A%20Cook%20scores%20his%2010000th%20run%20for%20England" data-size="large"><img class="favicon" src="images/twitter.gif">  Tweet this</a>
+						<span ng-click="statShare={display:'none'}" class="closeTweet">x</span>
+					</div>	
+					<div id="statsContainer">
+						<div class="smallRow">
+							<span class="overview">England currently lead by 264 runs</span>
+						</div>
+						<div class="largeRow1">
+							<span class="runs">238<span class="thinSlash">/</span></span><span class="wickets">7</span><span class="overs">34.5 overs</span>
+						</div>
+						<div class="largeRow">
+							<div class="bat1 infoBlocks">
+								<div class="photo">
+									<img class="roundHeadshot" src="images/stokes.jpg">
+								</div>
+								<div class="playerFigures">
+									<div class="name">
+										<span class="active"><img class="scorefavicon" src="images/stumps.png" style="height:14px;">B Stokes</span>
+									</div>
+									<div class="liveScore">
+										<span class="runsDisplay">8<span class="balls"> 18</span></span>
+									</div>
+								</div>
+							</div>
+							<div class="bat2 infoBlocks">
+								<div class="photo">
+									<img class="roundHeadshot" src="images/butler.png">
+								</div>
+								<div class="playerFigures">
+									<div class="name">
+										<span><img class="scorefavicon" src="images/stumps2.png" style="height:14px;">J Butler</span>
+									</div>
+									<div class="liveScore">
+										<span class="runsDisplay inactive">36<span class="balls"> 87</span></span>
+									</div>
+								</div>
+							</div>
+							<div class="bowler infoBlocks">
+								<div class="playerFigures">
+									<div class="name">
+										<span class="active"><img class="scorefavicon roundCrop" src="images/ball.png" style="height:14px;">Y Shar</span>
+									</div>
+									<div class="liveScore">
+										<span class="bowlerRuns"><span class="bowlerWickets">2</span><span class="thinSlash">/</span>89</span>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<div class="smallRow">
+							<span class="score">England 384 & 238/7, Pakistan 358</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

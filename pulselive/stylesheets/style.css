@@ -1,0 +1,309 @@
+@font-face {
+    font-family:"OpenSans-Regular";
+    src: url("../fonts/OpenSans-Regular.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+    font-family:"OpenSans-Light";
+    src: url("../fonts/OpenSans-Light.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+    font-family:"OpenSans-ExtraBold";
+    src: url("../fonts/OpenSans-ExtraBold.ttf") /* TTF file for CSS3 browsers */
+}
+
+html {
+	font-family: OpenSans-Regular;
+}
+
+/*===========Main Score Area==========*/
+
+#mainScoreArea {
+	height:100vh;
+	background-image: url("../images/mainBackground.png");
+	background-size: cover;
+	background-position: center;
+	padding: 0px;
+	font-family: OpenSans-Regular;
+}
+
+.test {
+	color:red;
+}
+
+/*===========StatShare===============*/
+
+#statShare {
+	background-color: rgba(0, 0, 0, 0.69);
+    width: 250px;
+    height: 160px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px;
+}
+
+.twitter-share-button {
+	height: 100px;
+}
+
+.tweetButton {
+	width: 100%;
+    height: 33px;
+    background-color: #1B95E0;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    padding-top: 3px;
+}
+
+.tweetButton:hover {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.72);
+
+}
+
+#statsContainer {
+  height: 360px;
+  width: 100%;
+  padding: 0px;
+  position: absolute;
+  bottom: 0px;
+  background: rgba(255, 0, 0, 0);
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
+  background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
+}
+
+.favicon {
+	height: 27px;
+}
+
+#tweetInfo {
+	height: 40px;
+}
+
+#mainInfo {
+	background-color: red;
+}
+
+.smallimage {
+	height: 80px;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.tweetTitle {
+	display: inline-block;
+    width: 120px;
+    /* background-color: red; */
+    float: right;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.tweetDescription {
+	font-family: OpenSans-Light;
+	position: absolute;
+  color: white;
+  font-size: 12px;
+  bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.closeTweet {
+	font-size: 20px;
+    color: #4092C3;
+    position: absolute;
+    right: 8px;
+
+}
+
+/*==========Stats Section========*/
+#statsTable {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.31);
+}
+
+.playerStats {
+	width: 200px;
+	background-color: red;
+}
+
+.largeRow {
+	height: 140px;
+}
+
+.largeRow1 {
+	position: relative;
+	top: 70px;
+}
+
+.overview {
+	font-family: OpenSans-Light;
+  font-size: 20px;
+  color: #F3F0F0;
+  padding: 30px;
+  position: absolute;
+  top: 30px;
+}  
+
+.score {
+	font-family: OpenSans-Light;
+  font-size: 20px;
+  color: #F3F0F0;
+  padding: 30px;
+  position: relative;
+  bottom: -30px;
+}
+
+.runs {
+	font-family: OpenSans-ExtraBold;
+  font-size: 100px;
+  padding-left: 30px;
+  color: white;
+}
+
+.thinSlash {
+	font-family: OpenSans-Light;
+}
+
+.wickets {
+	font-family: OpenSans-ExtraBold;
+  font-size: 70px;
+  padding-left: 0px;
+  color: white;
+}
+
+.overs {
+	color: white;
+  font-size: 17px;
+  padding-left: 30px;
+}
+
+.infoBlocks {
+	
+  width: 190px;
+  height: 100px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.bat1 {
+	position: absolute;
+	bottom: 40px;
+}
+
+.bat2 {
+	position: absolute;
+	bottom: 40px;
+	left: 200px;
+}
+
+.bowler {
+	position: absolute;
+  bottom: 40px;
+  left: 400px;
+  border-left: solid 1.5px #606872;
+  padding-left: 30px;
+}
+
+.photo {
+	width: 50%;
+  height: 100%;
+  display: inline-block;
+}
+
+.playerFigures {
+	display: inline-block;
+	width: 40%;
+}
+
+.roundHeadshot {
+	height: 80px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  background-color: #E9E9E9;
+  border-radius: 100px;
+}
+
+.name {
+	color: #9E9E9E;
+  position: absolute;
+  top: 21px;
+  font-size: 9px;
+}
+
+.runsDisplay {
+	font-family: OpenSans-ExtraBold;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 23px;
+  border-bottom: solid 1.5px rgb(33, 138, 173);
+}
+
+.balls {
+	font-family: OpenSans-Light;
+	color: gray;
+  right: 50px;
+  bottom: 30px;
+  font-size: 15px;
+}
+
+.bowlerWickets {
+	font-family: OpenSans-ExtraBold;
+  font-size: 24px;
+  color: white;
+  position: relative;
+}
+
+.bowlerRuns {
+	font-family: OpenSans-ExtraBold;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 23px;
+  border-bottom: solid 1.5px rgba(255, 255, 255, 0.73);
+}
+
+.inactive {
+	color: #CECACA;
+	border-bottom: solid 1.5px rgba(113, 121, 130, 0.73);
+}
+
+.active {
+	color: white;
+}
+
+.scorefavicon {
+	height: 14px;
+  position: relative;
+  bottom: 4px;
+  margin-right: 3px;
+}
+
+.roundCrop {
+	border-radius: 100px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    .test {
+    	color:blue;
+    	display: none;
+    }
+}
