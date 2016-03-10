@@ -13,9 +13,28 @@
     src: url("../fonts/OpenSans-ExtraBold.ttf") /* TTF file for CSS3 browsers */
 }
 
+@font-face {
+    font-family:"OpenSans-Semibold";
+    src: url("../fonts/OpenSans-Semibold.ttf") /* TTF file for CSS3 browsers */
+}
+
 html {
 	font-family: OpenSans-Regular;
 }
+
+#menu-toggle {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+#hamburger {
+  height: 30px;
+  padding-left: 13px;
+  margin-top: 5px;
+}
+
 
 /*===========Main Score Area==========*/
 
@@ -40,7 +59,7 @@ html {
   position: absolute;
   display: inline-block;
   background-color: #C1C1C1;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .test {
@@ -51,12 +70,12 @@ html {
 
 #statShare {
 	background-color: rgba(0, 0, 0, 0.69);
-    width: 250px;
-    height: 160px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 5px;
+  width: 250px;
+  height: 160px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
 }
 
 .twitter-share-button {
@@ -65,15 +84,15 @@ html {
 
 .tweetButton {
 	width: 100%;
-    height: 33px;
-    background-color: #1B95E0;
-    position: absolute;
-    bottom: 0px;
-    text-align: center;
-    border-radius: 4px;
-    text-decoration: none;
-    color: white;
-    padding-top: 3px;
+  height: 33px;
+  background-color: #1B95E0;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  padding-top: 3px;
 }
 
 .tweetButton:hover {
@@ -117,13 +136,13 @@ html {
 
 .tweetTitle {
 	display: inline-block;
-    width: 120px;
-    /* background-color: red; */
-    float: right;
-    font-size: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    color: white;
+  width: 120px;
+  /* background-color: red; */
+  float: right;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  color: white;
 }
 
 .tweetDescription {
@@ -138,9 +157,9 @@ html {
 
 .closeTweet {
 	font-size: 20px;
-    color: #4092C3;
-    position: absolute;
-    right: 8px;
+  color: #4092C3;
+  position: absolute;
+  right: 8px;
 
 }
 
@@ -324,7 +343,7 @@ html {
 }
 
 .videoCard {
-  margin-top: 30px;
+  margin-top: 45px;
   margin-bottom: 30px;
   background-color: black;
   color: white;
@@ -362,13 +381,137 @@ html {
 .smallTitle {
   font-size: 11px;
   position: absolute;
-  margin-top: 5px;
+  margin-top: 20px;
   left: 115px;
   font-family: OpenSans-ExtraBold;
 }
 
 .feedTitle {
   left: 100px;
+  top: 345px;
+}
+
+/*==========SideBar===========*/
+#barHeader {
+  position: relative;
+  color: white;
+  background-color: #002146;
+  
+  font-size: 20px;
+  font-family: OpenSans-Semibold;
+  height: 15px;
+  width: 100%;
+  height: 45px;
+}
+
+.live {
+  background-color: #00BBEA;
+  height: 100%;
+  position: relative;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  float: right;
+}
+
+#sidebar-footer {
+  background-image: url("../images/oval.jpg");
+  position: fixed;
+  width: 250px;
+  bottom: 0px;
+  height: 200px;
+  z-index: 0;
+}
+
+#weather {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.77);
+}
+
+#matchPanel {
+  width: 100%;
+  height: 261px;
+}
+
+.matchTitle {
+  position: fixed;
+  display: inline-block;
+  font-family: "OpenSans-Semibold";
+  color: gray;
+  font-size: 10px;
+  width: 50%;
+  margin-top: 40px;
+  padding-left: 20px;
+}
+
+.location {
+  position: fixed;
+  color: white;
+  font-size: 11px;
+  font-family: "OpenSans-Semibold";
+  padding-left: 10px;
+}
+
+.team1 {
+  position: fixed;
+  width: 500px;
+  left: 20px;
+  top: 0px;
+  margin-top: 150px;
+  font-family: "OpenSans-Semibold";
+  color: white;
+  font-size: 30px;
+}
+
+.team2 {
+  position: fixed;
+  width: 500px;
+  left: 20px;
+  top: 0px;
+  margin-top: 184px;
+  font-family: "OpenSans-Semibold";
+  color: white;
+  font-size: 30px;
+}
+
+.intro {
+  position: fixed;
+  width: 500px;
+  left: 20px;
+  top: 0px;
+  margin-top: 226px;
+  font-family: "OpenSans-Semibold";
+  color: white;
+  font-size: 12px;
+}
+
+.floatingV {
+  position: fixed;
+  width: 500px;
+  left: 0;
+  top: 0px;
+  margin-top: 156px;
+  font-family: "OpenSans-Semibold";
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 45px;
+}
+
+.glyIcon {
+  padding-right: 10px;
+}
+
+.hawk {
+  height: 10px;
+  margin-left: 5px;
+}
+
+.arrow {
+  position: fixed;
+  color: #444141;
+  font-size: 20px;
+  left: 210px;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 1000px) {

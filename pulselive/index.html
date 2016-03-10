@@ -7,15 +7,57 @@
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="./js/app.js"></script>
 		<script src="./js/cricketController.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<link href="stylesheets/simple-sidebar.css" rel="stylesheet">
 	</head>
 	<body ng-controller="cricketController as cricket">
-		<div class="container-fluid">
+		<div id="wrapper">
 
-			<div class="row">
+			<div id="sidebar-wrapper">
+			    
+			    <ul class="sidebar-nav">
+			        <li>
+			            <a href="#"><i class="fa fa-file-text-o glyIcon"></i>Full Scorecard<i class="fa fa-angle-right arrow"></i></a>
+			        </li>
+			        <li>
+			            <a href="#"><img class="hawk" src="images/hawk-white.png">Hawk - Eye Analysis<i class="fa fa-angle-right arrow"></i></a>
+			        </li>
+			        <li>
+			            <a href="#"><i class="fa fa-camera glyIcon"></i>Photo Stream<i class="fa fa-angle-right arrow"></i></a>
+			        </li>
+			        <li>
+			            <a href="#"><i class="fa fa-play-circle-o glyIcon"></i> Video<i class="fa fa-angle-right arrow"></i></a>
+			        </li>
+			        <li>
+			            <a href="#"><i class="fa fa-check glyIcon"></i>Fan Voting<i class="fa fa-angle-right arrow"></i></a>
+			        </li>
+			        <li>
+			            <a href="#"><i class="fa fa-share-alt glyIcon"></i>Social<i class="fa fa-angle-right arrow"></i></a>
+			        </li>
+			    </ul>
+			    
+	        <div id="barHeader">
+	    			<div class="live">LIVE</div>
+	    		</div>
+					<div id="matchPanel">
+						<span class="location">Dubai International Cricket Ground</span>
+						<span class="matchTitle">INTERNATIONAL TEST MATCH SERIES</span>
+						<span class="team1">PAKISTAN</span>
+						<span class="team2">ENGLAND</span>
+						<span class="floatingV">V</span>
+						<span class="intro"><span style="color:#00BBEA;">ENG </span>DAY 4<span style="color:gray"> 2ND INNINGS</span></span>
+			    </div>
+			    <div id="sidebar-footer">
+			    	<div id="weather">
 
-	
+			    	</div>
+			    </div>
+			</div>
+
+
+			<div class="page-content-wrapper">
 				<!-- Modal for Video -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  <div class="modal-dialog" role="document">
@@ -30,10 +72,11 @@
 				    </div>
 				  </div>
 				</div>
+				<div id="mainContainer">
 
-				<div id="mainContainer" class="col-sm-12">
 					<div id="feedPanel">
 						<div id ="latestVideo">
+						<a href="#menu-toggle" id="menu-toggle"><img id="hamburger" src="images/hamburger.png"></a>
 						<span class="smallTitle">Latest Videos</span>
 							<div class="container-fluid">
 								<div class="card videoCard">
@@ -48,13 +91,10 @@
 						</div>
 						<div id="tweetFeed">
 							<span class="smallTitle feedTitle">Match Commentary</span>
-							
-							<!-- <a class="twitter-timeline" href="https://twitter.com/ECB_cricket" data-widget-id="707893905212227584" data-chrome="nofooter noheader">Tweets by @ECB_cricket</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
-
+							<a class="twitter-timeline" href="https://twitter.com/ECB_cricket" data-widget-id="707893905212227584" data-chrome="nofooter noheader">Tweets by @ECB_cricket</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						</div>	
 					</div>
-
 					<div id="mainScoreArea">
 						<div ng-style="statShare" id="statShare">	
 							<img class="smallimage" src="images/cook.jpg">
@@ -113,14 +153,15 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
-
-			
-
-
-
 			</div>
 		</div>
+
+		<script>
+		$("#menu-toggle").click(function(e) {
+		    e.preventDefault();
+		    $("#wrapper").toggleClass("toggled");
+		});
+		</script>
 	</body>
 </html>
