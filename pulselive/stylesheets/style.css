@@ -19,13 +19,28 @@ html {
 
 /*===========Main Score Area==========*/
 
+#mainContainer {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 #mainScoreArea {
-	height:100vh;
-	background-image: url("../images/mainBackground.png");
-	background-size: cover;
-	background-position: center;
-	padding: 0px;
-	font-family: OpenSans-Regular;
+	height: 100vh;
+  background-image: url("../images/mainBackground.png");
+  background-size: cover;
+  background-position: center;
+  padding: 0px;
+  font-family: OpenSans-Regular;
+  margin-left: 300px;
+}
+
+#feedPanel {
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  display: inline-block;
+  background-color: #C1C1C1;
+  z-index: 1;
 }
 
 .test {
@@ -71,7 +86,7 @@ html {
   height: 360px;
   width: 100%;
   padding: 0px;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   background: rgba(255, 0, 0, 0);
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
@@ -208,13 +223,13 @@ html {
 .bat2 {
 	position: absolute;
 	bottom: 40px;
-	left: 200px;
+	left: 170px;
 }
 
 .bowler {
 	position: absolute;
   bottom: 40px;
-  left: 400px;
+  left: 367px;
   border-left: solid 1.5px #606872;
   padding-left: 30px;
 }
@@ -299,8 +314,64 @@ html {
 	border-radius: 100px;
 }
 
+/*=========Feed Panel==========*/
 
-@media only screen and (max-width: 800px) {
+#latestVideo {
+}
+
+#twitter-widget-0{
+  height: 100%;
+}
+
+.videoCard {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: black;
+  color: white;
+  height: 310px;
+  border-radius: 3px;
+  box-shadow: 5px 8px 8px #888888;
+}
+
+.card-title {
+  font-size: 10px;
+  font-family: OpenSans-ExtraBold;
+  padding-left: 15px;
+}
+
+.card-text {
+  font-family: OpenSans-Light;
+  font-size: 25px;
+  padding-left: 15px;
+}
+
+.playButton {
+  display: block;
+  position: relative;
+  top: -230px;
+  width: 42px;
+  left: 114px;
+}
+
+.playButtonImg {
+  width: 40px;
+  background-color: black;
+  border-radius: 100px;
+}
+
+.smallTitle {
+  font-size: 11px;
+  position: absolute;
+  margin-top: 5px;
+  left: 115px;
+  font-family: OpenSans-ExtraBold;
+}
+
+.feedTitle {
+  left: 100px;
+}
+
+@media only screen and (max-width: 1000px) {
     /* For mobile phones: */
     .test {
     	color:blue;
