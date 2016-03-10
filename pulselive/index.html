@@ -14,9 +14,8 @@
 	</head>
 	<body ng-controller="cricketController as cricket">
 		<div id="wrapper">
-
+			<!-- SideBar -->
 			<div id="sidebar-wrapper">
-			    
 			    <ul class="sidebar-nav">
 			        <li>
 			            <a href="#"><i class="fa fa-file-text-o glyIcon"></i>Full Scorecard<i class="fa fa-angle-right arrow"></i></a>
@@ -37,7 +36,6 @@
 			            <a href="#"><i class="fa fa-share-alt glyIcon"></i>Social<i class="fa fa-angle-right arrow"></i></a>
 			        </li>
 			    </ul>
-			    
 	        <div id="barHeader">
 	    			<div class="live">LIVE</div>
 	    		</div>
@@ -50,13 +48,22 @@
 						<span class="intro"><span style="color:#00BBEA;">ENG </span>DAY 4<span style="color:gray"> 2ND INNINGS</span></span>
 			    </div>
 			    <div id="sidebar-footer">
+			    	<!-- Weather -->
 			    	<div id="weather">
-
+			    		<div id="weather2day">
+				    		<span class="weatherTitle">TODAY</span>
+				    		<span class="weatherIcon"><i class="fa fa-sun-o"></i></span>
+				    		<span class="temperature">36&#176</span>
+			    		</div>
+			    		<div id="weatherday5">
+			    			<span class="weatherTitle">DAY 5</span>
+			    			<span class="weatherIcon"><i class="fa fa-sun-o"></i></span>
+			    			<span class="temperature">37&#176</span>
+			    		</div>
 			    	</div>
 			    </div>
 			</div>
-
-
+			<!-- PageContentContainer -->
 			<div class="page-content-wrapper">
 				<!-- Modal for Video -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -73,11 +80,11 @@
 				  </div>
 				</div>
 				<div id="mainContainer">
-
+					<!-- MediaFeedPanel -->
 					<div id="feedPanel">
 						<div id ="latestVideo">
-						<a href="#menu-toggle" id="menu-toggle"><img id="hamburger" src="images/hamburger.png"></a>
-						<span class="smallTitle">Latest Videos</span>
+							<a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars hamburger"></i></a>
+							<span class="smallTitle">Latest Videos</span>
 							<div class="container-fluid">
 								<div class="card videoCard">
 								  <img class="card-img-top" src="images/videoTag.jpeg" style="width: 100%;" alt="Card image cap">
@@ -95,7 +102,9 @@
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 						</div>	
 					</div>
+					<!-- LargeScoreAreaRight -->
 					<div id="mainScoreArea">
+						<!-- TwitterShare -->
 						<div ng-style="statShare" id="statShare">	
 							<img class="smallimage" src="images/cook.jpg">
 							<span class="tweetTitle">A Cook <br> 10,000th run</span>
@@ -103,7 +112,9 @@
 							<a class="tweetButton" href="https://twitter.com/intent/tweet?text=A%20Cook%20scores%20his%2010000th%20run%20for%20England" data-size="large"><img class="favicon" src="images/twitter.gif">  Tweet this</a>
 							<span ng-click="statShare={display:'none'}" class="closeTweet">x</span>
 						</div>	
+						<!-- StatsandScoreArea -->
 						<div id="statsContainer">
+							<!-- Score -->
 							<div class="smallRow">
 								<span class="overview">England currently lead by 264 runs</span>
 							</div>
@@ -111,6 +122,7 @@
 								<span class="runs">238<span class="thinSlash">/</span></span><span class="wickets">7</span><span class="overs">34.5 overs</span>
 							</div>
 							<div class="largeRow">
+								<!-- Batter 1 Scores -->
 								<div class="bat1 infoBlocks">
 									<div class="photo">
 										<img class="roundHeadshot" src="images/stokes.jpg">
@@ -124,6 +136,7 @@
 										</div>
 									</div>
 								</div>
+								<!-- Batter 2 Scores -->
 								<div class="bat2 infoBlocks">
 									<div class="photo">
 										<img class="roundHeadshot" src="images/butler.png">
@@ -137,6 +150,7 @@
 										</div>
 									</div>
 								</div>
+								<!-- Bowler -->
 								<div class="bowler infoBlocks">
 									<div class="playerFigures">
 										<div class="name">
@@ -148,6 +162,7 @@
 									</div>
 								</div>
 							</div>
+							<!-- RunnerScore -->
 							<div class="smallRow">
 								<span class="score">England 384 & 238/7, Pakistan 358</span>
 							</div>
@@ -156,12 +171,5 @@
 				</div>
 			</div>
 		</div>
-
-		<script>
-		$("#menu-toggle").click(function(e) {
-		    e.preventDefault();
-		    $("#wrapper").toggleClass("toggled");
-		});
-		</script>
 	</body>
 </html>

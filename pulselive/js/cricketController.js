@@ -2,13 +2,13 @@ angular
   .module("cricket")
   .controller("cricketController", cricketController);
 
-function cricketController(){
-  var self = this; 
+// function cricketController(){
+//   var self = this; 
 
-  self.closeTweet = closeTweet;
+//   self.closeTweet = closeTweet;
 
-  function closeTweet(){
-    alert("its working")
-  }
-}
+//   function closeTweet(){
+//     alert("its working")
+//   }
+// }
 
