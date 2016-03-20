@@ -25,21 +25,18 @@ function pulseballInit() {
 
 	self.addMatch = function() {
 		// delare variables to make prediction
-		var homeTeamName				= self.homeTeam;
-		var awayTeamName				= self.awayTeam;
-
+		var homeTeamName = self.homeTeam;
+		var awayTeamName = self.awayTeam;
 	 	//for loop to set the home team rating
 		for (var i=0; i<self.teams.length; i++) {
 		  if (self.teams[i].name == homeTeamName) {
 		   homeTeamRat = self.teams[i].ref;
 		  } 
 		}
-		// for loop to set the 
+		// for loop to set the away team rating
 		for (var i=0; i<self.teams.length; i++) {
 		  if (self.teams[i].name == awayTeamName) {
 		   awayTeamRat = self.teams[i].ref;
-		   console.log(awayTeamName)
-		   console.log(awayTeamRat)
 		  } 
 		}
 
