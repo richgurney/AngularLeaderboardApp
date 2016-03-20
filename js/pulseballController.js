@@ -4,60 +4,37 @@ angular
 
 function pulseballInit() {
 	var self = this;
-
-	// the starting leaderboard
-	self.board = [
+	self.homeTeam;
+	self.awayTeam;
+	self.homeTeamScore;
+	self.awayTeamScore;
+	self.leaderboard = [
 		{ "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": 54.23},
 		{ "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts":54.00 },
 		{ "team": { "name": "France", "id": 2 }, "pos": 3, "pts": 52.95 },
 		{ "team": { "name": "England", "id": 1 }, "pos": 4, "pts": 52.32 },
 		{ "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 43.50 }
 	];
-
-	// make avaible the team details
-	var australia = self.board[0];
-	var newZealand = self.board[1];
-	var france = self.board[2];
-	var england = self.board[3];
-	var romania = self.board[4];
-
 	self.teams = [
-		{"name" : "Australia", "ref" : self.board[0].pts},
-		{"name" : "New Zealand", "ref" : self.board[1].pts},
-		{"name" : "France", "ref" : self.board[2].pts},
-		{"name" : "England", "ref" : self.board[3].pts},
-		{"name" : "Romania", "ref" : self.board[4].pts}
-	];
-
-	self.homeTeam;
-	self.awayTeam;
-
-	self.homeTeamScore;
-	self.awayTeamScore;
-
-	self.leaderboard = [
-		{ "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": australia.pts},
-		{ "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts": newZealand.pts},
-		{ "team": { "name": "France", "id": 2 }, "pos": 3, "pts": france.pts},
-		{ "team": { "name": "England", "id": 1 }, "pos": 4, "pts": england.pts},
-		{ "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": romania.pts}
+		{"name" : "Australia", "ref" : self.leaderboard[0].pts},
+		{"name" : "New Zealand", "ref" : self.leaderboard[1].pts},
+		{"name" : "France", "ref" : self.leaderboard[2].pts},
+		{"name" : "England", "ref" : self.leaderboard[3].pts},
+		{"name" : "Romania", "ref" : self.leaderboard[4].pts}
 	];
 
 	self.addMatch = function() {
-
 		// delare variables to make prediction
 		var homeTeamName				= self.homeTeam;
 		var awayTeamName				= self.awayTeam;
 
-	 	//for loop to set the awayTeamRat
+	 	//for loop to set the home team rating
 		for (var i=0; i<self.teams.length; i++) {
 		  if (self.teams[i].name == homeTeamName) {
 		   homeTeamRat = self.teams[i].ref;
-		   console.log(homeTeamName)
-		   console.log(homeTeamRat)
 		  } 
 		}
-
+		// for loop to set the 
 		for (var i=0; i<self.teams.length; i++) {
 		  if (self.teams[i].name == awayTeamName) {
 		   awayTeamRat = self.teams[i].ref;
