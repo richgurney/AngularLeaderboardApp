@@ -1,0 +1,12 @@
+html {
+	background-color: gray;
+}
+
+.boardSpan {
+	display: inline-block;
+}
+
+.boardTeam {
+	width: 200px;
+    display: inline-block;
+}
