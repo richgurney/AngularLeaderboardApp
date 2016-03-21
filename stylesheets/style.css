@@ -1,12 +1,105 @@
-html {
-	background-color: gray;
+@font-face {
+  font-family:"OpenSans-Regular";
+  src: url("../fonts/OpenSans-Regular.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+  font-family:"OpenSans-Light";
+  src: url("../fonts/OpenSans-Light.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+  font-family:"OpenSans-ExtraBold";
+  src: url("../fonts/OpenSans-ExtraBold.ttf") /* TTF file for CSS3 browsers */
+}
+
+@font-face {
+  font-family:"OpenSans-Semibold";
+  src: url("../fonts/OpenSans-Semibold.ttf") /* TTF file for CSS3 browsers */
+}
+
+#container {
+	background: url("../images/gym.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	height: 100vh;
+	width:	100%;
 }
 
 .boardSpan {
 	display: inline-block;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: 200;
+  font-family: "OpenSans-Light";
+}
+
+.boardSpanRating {
+	display: inline-block;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: 200;
+  font-family: "OpenSans-Light";
+  position: relative;
+  right: -223px;
 }
 
 .boardTeam {
 	width: 200px;
-    display: inline-block;
+  display: inline-block;
+  font-family:"OpenSans-Semibold";
+}
+
+#leaderboard {
+	background-color: gray;
+  width: 552px;
+  margin: auto;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+#lbTitle {
+	text-align: center;
+  margin-top: 0px;
+  margin-bottom: 13px;
+  font-family:"OpenSans-ExtraBold";
+}
+
+#pageHeader {
+	text-align: center;
+	font-family: "OpenSans-ExtraBold";
+}
+
+#pageHeader h1 {
+	margin-top: 0px;
+	font-size: 85px;
+}
+
+#form {
+	margin: auto;
+  width: 554px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: "OpenSans-Semibold";
+}
+
+#formFooter {
+	width: 311px;
+	margin: auto;
+}
+
+.button {
+	display: inline-block;
+  margin: auto;
+  width: 153px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ABC569;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

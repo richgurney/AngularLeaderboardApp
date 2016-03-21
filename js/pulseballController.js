@@ -23,6 +23,16 @@ function pulseballInit() {
 		{"name" : "Romania", "ref" : self.leaderboard[4].pts}
 	];
 
+	self.resetBoard = function() {
+		self.leaderboard = [
+			{ "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": 54.23},
+			{ "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts":54.00 },
+			{ "team": { "name": "France", "id": 2 }, "pos": 3, "pts": 52.95 },
+			{ "team": { "name": "England", "id": 1 }, "pos": 4, "pts": 52.32 },
+			{ "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 43.50 }
+		];
+	}
+
 	self.addMatch = function() {
 		// delare variables to make prediction
 		var homeTeamName = self.homeTeam;
@@ -39,91 +49,84 @@ function pulseballInit() {
 		   awayTeamRat = self.teams[i].ref;
 		  } 
 		}
-
-		var homeTeamScore 		= self.homeTeamScore;
-		var awayTeamScore 		= self.awayTeamScore;
-		var tempHomeRating 		= homeTeamRat + 3;
-		var ratingDiff 				= (tempHomeRating - awayTeamRat);
-		
+		// set the score to for both team to user input
+		var homeTeamScore = self.homeTeamScore;
+		var awayTeamScore = self.awayTeamScore;
+		// set the temp home rating and ratting diffence
+		var tempHomeRating = homeTeamRat + 3;
+		var ratingDiff = (tempHomeRating - awayTeamRat);
+		// logic for
 		// caping the rating Difference
 		if(ratingDiff > 10) {
-			// console.log("Im greater than 10 so im capped at 10")
 			ratingDiff = 10;
 		} else if (ratingDiff < -10) {
-			// console.log("Im less than -10 so im capped at -10")
 			ratingDiff = -10;
 		}
-
-		// who won?
+		// who won the game?
 		if (homeTeamScore < awayTeamScore) {
-			console.log("away is winner")
 			winner = awayTeamName;
 		} else if (homeTeamScore > awayTeamScore) {
 			winner = homeTeamName;
 		} else {
 			winner = "draw";
 		}
-
-		console.log("Winner is " + winner)
-
-		// Calculate new ranking
-		if(winner == homeTeamName){					
+		// Calculate new rankings
+		if(winner == homeTeamName){
+			// set the team rating if home team won
 			newHomeRating = homeTeamRat + (1 + (ratingDiff /10));			
 			newAwayRating = awayTeamRat - (1 + (ratingDiff /10));		
-			
+			// changes the leaderboard object with the new home team rating
 			for (var i=0; i<self.leaderboard.length; i++) {
 			  if (self.leaderboard[i].team.name == homeTeamName) {
 			    self.leaderboard[i].pts = newHomeRating;
-			    console.log(self.leaderboard[i].pts);
 			  } 
 			}
-
+			// changes the leaderboard object with the new away team rating
 			for (var i=0; i<self.leaderboard.length; i++) {
 			  if (self.leaderboard[i].team.name == awayTeamName) {
 			    self.leaderboard[i].pts = newAwayRating;
-			    console.log(self.leaderboard[i].pts);
 			  }
 			}  
-
 		} else if (winner == awayTeamName){
-			console.log("Away team won")
+			// set the team rating if away team won
 			newHomeRating = homeTeamRat - (1 + (ratingDiff /10));
 			newAwayRating = awayTeamRat + (1 + (ratingDiff /10));
-
+			// changes the leaderboard object with the new home team rating
 			for (var i=0; i<self.leaderboard.length; i++) {
 			  if (self.leaderboard[i].team.name == homeTeamName) {
 			    self.leaderboard[i].pts = newHomeRating;
 			  } 
 			}
-
+			// changes the leaderboard object with the new away team rating
 			for (var i=0; i<self.leaderboard.length; i++) {
 			  if (self.leaderboard[i].team.name == awayTeamName) {
 			    self.leaderboard[i].pts = newAwayRating;
 			  }
 			}
-
+			// sets the team ratings if there was a draw
 		} else {
+			// adds the same rating to both teams
 			newHomeRating = homeTeamRat + (ratingDiff /10);
 			newAwayRating = awayTeamRat + (ratingDiff /10);
-
+			// changes the leaderboard object with the new home team rating
 			for (var i=0; i<self.leaderboard.length; i++) {
 			  if (self.leaderboard[i].team.name == homeTeamName) {
 			    self.leaderboard[i].pts = newHomeRating;
 			  } 
 			}
-
+			// changes the leaderboard object with the new away team rating
 			for (var i=0; i<self.leaderboard.length; i++) {
 			  if (self.leaderboard[i].team.name == awayTeamName) {
 			    self.leaderboard[i].pts = newAwayRating;
 			  }
 			}
 		}
+		// resets the bidning values
 		self.homeTeam = "";
 		self.awayTeam = "";
 		self.homeTeamScore = "";
 		self.awayTeamScore = "";
-	}	
-		
+	}			
 }
 
 pulseballInit();

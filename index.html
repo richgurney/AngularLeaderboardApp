@@ -12,27 +12,41 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	</head>
 	<body ng-controller="pulseballInit as ranking">
-		<div class="leaderboard" ng-repeat="position in ranking.leaderboard  | orderBy:'-pts'">
-			<span class="boardSpan">{{$index + 1}}</span>
-			<h4 class="boardTeam">{{position.team.name}}</h4>
-			<span class="boardSpan">{{position.pts | number:2}}</span>
+		<div id=container>
+			<div id="pageHeader">
+				<h1>PulseBall Predictor</h1>
+			</div>
+			<div id="leaderboard">
+				<h2 id="lbTitle">Leaderboard</h2>
+				<div ng-repeat="position in ranking.leaderboard  | orderBy:'-pts'">
+					<span class="boardSpan">{{$index + 1}}</span>
+					<h4 class="boardTeam">{{position.team.name}}</h4>
+					<span class="boardSpanRating">{{position.pts | number:2}}</span>
+				</div>
+			</div>
+			<div id="form">
+				<div id="homeTeamForm">
+					<label>Select Home Team</label>
+					<select ng-model="ranking.homeTeam">
+						<option ng-repeat="selection in ranking.teams" value="{{selection.name}}">{{selection.name}}</option>
+					</select>
+					<label>Home Team Score</label>
+					<input type="text" placeholder="Enter Score" ng-model="ranking.homeTeamScore">
+				</div>	
+				<div id="awayTeamForm">
+					<label>Select Away Team</label>
+					<select ng-model="ranking.awayTeam">
+						<option ng-repeat="selection in ranking.teams" value="{{selection.name}}">{{selection.name}}</option>
+					</select>
+					<label>Away Team Score</label>
+					<input type="text" placeholder="Enter Score" ng-model="ranking.awayTeamScore">
+				</div>	
+				<div id="formFooter">
+					<button class="button" ng-click="ranking.addMatch()">Add Game</button>
+					<button class="button" ng-click="ranking.resetBoard()">Reset Board</button>
+				</div>
+				
+			</div>
 		</div>
-		<div id="homeTeamForm">
-			<label>Select Home Team</label>
-			<select ng-model="ranking.homeTeam">
-				<option ng-repeat="selection in ranking.teams" value="{{selection.name}}">{{selection.name}}</option>
-			</select>
-			<label>Home Team Score</label>
-			<input type="text" placeholder="Enter Score" ng-model="ranking.homeTeamScore">
-		</div>	
-		<div id="awayTeamForm">
-			<label>Select Away Team</label>
-			<select ng-model="ranking.awayTeam">
-				<option ng-repeat="selection in ranking.teams" value="{{selection.name}}">{{selection.name}}</option>
-			</select>
-			<label>Away Team Score</label>
-			<input type="text" placeholder="Enter Score" ng-model="ranking.awayTeamScore">
-		</div>	
-		<button ng-click="ranking.addMatch()">Add Game</button>
 	</body>
 </html>
