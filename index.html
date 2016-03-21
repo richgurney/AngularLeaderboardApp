@@ -21,7 +21,7 @@
 				<div ng-repeat="position in ranking.leaderboard  | orderBy:'-pts'">
 					<span class="boardSpan">{{$index + 1}}</span>
 					<h4 class="boardTeam">{{position.team.name}}</h4>
-					<span class="boardSpanRating">{{position.pts | number:2}}</span>
+					<span class="boardSpanRating">{{position.pts | number:2}} pts</span>
 				</div>
 			</div>
 			<div id="form">

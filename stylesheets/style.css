@@ -44,7 +44,7 @@
   font-weight: 200;
   font-family: "OpenSans-Light";
   position: relative;
-  right: -223px;
+  right: -203px;
 }
 
 .boardTeam {
@@ -59,6 +59,7 @@
   margin: auto;
   border-radius: 8px;
   padding: 30px;
+  color: white;
 }
 
 #lbTitle {
